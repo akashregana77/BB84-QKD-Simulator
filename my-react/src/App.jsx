@@ -32,6 +32,7 @@ function App() {
   const [encryptedMessage, setEncryptedMessage] = useState("");
   const [decryptedMessage, setDecryptedMessage] = useState("");
   const [simulationData, setSimulationData] = useState(null);
+  const [hoveredSiftIndex, setHoveredSiftIndex] = useState(null);
 
   const resetAll = () => {
     setAliceBits([]);
@@ -65,7 +66,7 @@ function App() {
                 <EveToggle enabled={eveEnabled} setEnabled={setEveEnabled} />
               </div>
               <div className="panel-grid">
-                <AlicePanel bits={aliceBits} bases={aliceBases} />
+                <AlicePanel bits={aliceBits} bases={aliceBases} highlightIndex={hoveredSiftIndex} />
                 <BobPanel
                   bits={bobBits}
                   bases={bobBases}
@@ -74,6 +75,7 @@ function App() {
                   eveEnabled={eveEnabled}
                   eveGuesses={eveGuesses}
                   eveBases={eveBases}
+                  highlightIndex={hoveredSiftIndex}
                 />
               </div>
               <KeyProcessingPanel
@@ -82,6 +84,7 @@ function App() {
                 finalKey={finalKey}
                 keyAccepted={keyAccepted}
                 eveEnabled={eveEnabled}
+                onSiftHover={setHoveredSiftIndex}
               />
               <Controls
                 aliceBits={aliceBits}

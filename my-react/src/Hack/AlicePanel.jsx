@@ -11,7 +11,7 @@ function getStateSymbol(bit, basis) {
   }
 }
 
-function AlicePanel({ bits, bases }) {
+function AlicePanel({ bits, bases, highlightIndex }) {
   const [selectedQubit, setSelectedQubit] = useState(null);
 
   // Limit display to 10 bits
@@ -35,7 +35,7 @@ function AlicePanel({ bits, bases }) {
           displayBits.map((bit, index) => (
             <div
               key={index}
-              className="bit-item"
+              className={`bit-item${highlightIndex && highlightIndex.index === index ? (highlightIndex.isMismatch ? ' bit-highlight-mismatch' : ' bit-highlight') : ''}${highlightIndex && highlightIndex.index !== index ? ' bit-dimmed' : ''}`}
               onClick={() =>
                 setSelectedQubit({
                   bit,

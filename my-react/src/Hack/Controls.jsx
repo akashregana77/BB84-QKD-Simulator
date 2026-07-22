@@ -83,6 +83,7 @@ function Controls({
     for (let i = 0; i < aliceBits.length; i++) {
       if (aliceBases[i] === bobBases[i]) {
         sifted.push({
+          originalIndex: i,
           alice: aliceBits[i],
           bob: bobBits[i],
           aliceBase: aliceBases[i],

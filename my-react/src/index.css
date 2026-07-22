@@ -629,6 +629,51 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 0.85rem;
   margin: 0.25rem;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  cursor: pointer;
+  transition: all var(--transition-normal);
+}
+
+.sifted-bit:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 6px 20px rgba(16, 185, 129, 0.35);
+}
+
+/* ── Qubit Highlight on Sift Hover ── */
+.bit-item.bit-highlight {
+  transform: translateY(-6px) scale(1.12);
+  border-color: #10b981;
+  background: #ecfdf5;
+  box-shadow:
+    0 0 0 3px rgba(16, 185, 129, 0.25),
+    0 8px 24px rgba(16, 185, 129, 0.2);
+  z-index: 2;
+}
+
+.bit-item.bit-highlight .bit-circle {
+  transform: scale(1.15);
+  box-shadow: 0 0 12px rgba(16, 185, 129, 0.4);
+}
+
+.bit-item.bit-dimmed {
+  opacity: 0.35;
+  transform: scale(0.95);
+  filter: grayscale(0.3);
+}
+
+/* Orange highlight for Eve-tampered (mismatched) sifted bits */
+.bit-item.bit-highlight-mismatch {
+  transform: translateY(-6px) scale(1.12);
+  border-color: #f59e0b;
+  background: #fffbeb;
+  box-shadow:
+    0 0 0 3px rgba(245, 158, 11, 0.25),
+    0 8px 24px rgba(245, 158, 11, 0.2);
+  z-index: 2;
+}
+
+.bit-item.bit-highlight-mismatch .bit-circle {
+  transform: scale(1.15);
+  box-shadow: 0 0 12px rgba(245, 158, 11, 0.4);
 }
 
 .qber-bar {

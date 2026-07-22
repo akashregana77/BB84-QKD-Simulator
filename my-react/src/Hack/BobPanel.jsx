@@ -11,7 +11,7 @@ function getStateSymbol(bit, basis) {
   }
 }
 
-function BobPanel({ bits, bases, eveEnabled }) {
+function BobPanel({ bits, bases, eveEnabled, highlightIndex }) {
   const [selectedQubit, setSelectedQubit] = useState(null);
 
   const displayBits = bits.slice(0, 10);
@@ -40,7 +40,7 @@ function BobPanel({ bits, bases, eveEnabled }) {
               return (
                 <div
                   key={index}
-                  className="bit-item"
+                  className={`bit-item${highlightIndex && highlightIndex.index === index ? (highlightIndex.isMismatch ? ' bit-highlight-mismatch' : ' bit-highlight') : ''}${highlightIndex && highlightIndex.index !== index ? ' bit-dimmed' : ''}`}
                   onClick={() =>
                     setSelectedQubit({
                       bit,

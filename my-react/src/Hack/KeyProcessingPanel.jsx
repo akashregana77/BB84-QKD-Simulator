@@ -1,7 +1,7 @@
 import React from "react";
 import "../index.css";
 
-function KeyProcessingPanel({ siftedBits, qber, finalKey, keyAccepted, eveEnabled }) {
+function KeyProcessingPanel({ siftedBits, qber, finalKey, keyAccepted, eveEnabled, onSiftHover }) {
   return (
     <div className="key-panel">
       {/* Sifted Bits */}
@@ -17,6 +17,8 @@ function KeyProcessingPanel({ siftedBits, qber, finalKey, keyAccepted, eveEnable
                 className={`sifted-bit ${
                   eveEnabled && bit.alice !== bit.bob ? "bg-yellow" : "bg-green"
                 }`}
+                onMouseEnter={() => onSiftHover && onSiftHover({ index: bit.originalIndex, isMismatch: bit.alice !== bit.bob })}
+                onMouseLeave={() => onSiftHover && onSiftHover(null)}
               >
                 A: {bit.alice}, B: {bit.bob}
               </div>
