@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Loader from "./loader";
+import ProcessAnalyzer from "../components/ProcessAnalyzer";
 import "../index.css";
 
 function Controls({
@@ -238,7 +239,7 @@ function Controls({
   );
 
   return (
-    <div className="controls">
+    <div className="controls" data-qkd-stage="controls">
       {loaderAppear ? (
         <Loader />
       ) : (
@@ -294,6 +295,26 @@ function Controls({
               <ResetIcon /> Reset
             </button>
 
+            <ProcessAnalyzer
+              aliceBits={aliceBits}
+              aliceBases={aliceBases}
+              bobBits={bobBits}
+              bobBases={bobBases}
+              eveEnabled={eveEnabled}
+              eveGuesses={eveGuesses}
+              eveBases={eveBases}
+              siftedBits={siftedBits}
+              qber={qber}
+              finalKey={finalKey}
+              keyAccepted={keyAccepted}
+              numBits={numBits}
+              message={message}
+              encryptedMessage={encryptedMessage}
+              decryptedMessage={decryptedMessage}
+              simulationData={simulationData}
+              isGenerating={loaderAppear}
+            />
+
             {qber !== null && (
               <button
                 onClick={handleViewGraph}
@@ -305,7 +326,7 @@ function Controls({
           </div>
 
           {finalKey.length > 0 && (
-            <div className="encryption-section">
+            <div className="encryption-section" data-qkd-stage="encryption">
               <h3 className="section-title">One-Time Pad Encryption</h3>
               <input
                 type="text"

@@ -19,7 +19,7 @@ function AlicePanel({ bits, bases, highlightIndex }) {
   const displayBases = bases.slice(0, 10);
 
   return (
-    <div className="alice-panel">
+    <div className="alice-panel" data-qkd-stage="alice">
       <h2 className="panel-title">
         <svg className="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
           <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />

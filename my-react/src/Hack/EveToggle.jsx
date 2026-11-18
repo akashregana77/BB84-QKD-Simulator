@@ -3,7 +3,7 @@ import "../index.css";
 
 function EveToggle({ enabled, setEnabled }) {
   return (
-    <div className={`eve-toggle ${enabled ? "eve-active" : ""}`}>
+    <div className={`eve-toggle ${enabled ? "eve-active" : ""}`} data-qkd-stage="eve">
       <span className="eve-label">
         <svg className="eve-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
           <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />

@@ -3,7 +3,7 @@ import "../index.css";
 
 function QuantumChannel({ aliceBits, eveEnabled }) {
   return (
-    <div className="quantum-channel">
+    <div className="quantum-channel" data-qkd-stage="channel">
       <h3 className="channel-title">
         <svg className="channel-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
           <line x1="5" y1="12" x2="19" y2="12" />

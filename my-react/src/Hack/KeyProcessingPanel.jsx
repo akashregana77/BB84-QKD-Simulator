@@ -3,9 +3,9 @@ import "../index.css";
 
 function KeyProcessingPanel({ siftedBits, qber, finalKey, keyAccepted, eveEnabled, onSiftHover }) {
   return (
-    <div className="key-panel">
+    <div className="key-panel" data-qkd-stage="key-panel">
       {/* Sifted Bits */}
-      <div className="section">
+      <div className="section" data-qkd-stage="sifting">
         <h3 className="section-title">Sifted Bits</h3>
         {siftedBits.length === 0 ? (
           <p>No sifted bits yet</p>
@@ -30,7 +30,7 @@ function KeyProcessingPanel({ siftedBits, qber, finalKey, keyAccepted, eveEnable
 
       {/* QBER */}
       {qber !== null && (
-        <div className="section">
+        <div className="section" data-qkd-stage="qber">
           <h3 className="section-title">QBER</h3>
           <div className="qber-bar">
             <div className="qber-fill bg-blue" style={{ width: `${qber}%` }}></div>
@@ -48,7 +48,7 @@ function KeyProcessingPanel({ siftedBits, qber, finalKey, keyAccepted, eveEnable
 
       {/* Final Key */}
       {finalKey.length > 0 && (
-        <div className="section">
+        <div className="section" data-qkd-stage="final_key">
           <h3 className="section-title">Final Key</h3>
           <div className="bit-container">
             {finalKey.slice(0, 10).map((bit, index) => (

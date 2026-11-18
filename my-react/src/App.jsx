@@ -12,6 +12,7 @@ import Navbar from "./Hack/Navbar.jsx";
 import HomePage from "./pages/HomePage.jsx";
 import ArchitecturePage from "./pages/ArchitecturePage.jsx";
 import QC from "./pages/QC.jsx";
+import QuantumChatbot from "./components/QuantumChatbot.jsx";
 
 import "./index.css";
 
@@ -132,6 +133,7 @@ function App() {
         <Route path="/qc" element={<QC />} />
 
       </Routes>
+      <QuantumChatbot />
     </Router>
   );
 }
